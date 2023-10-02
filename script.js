@@ -45,17 +45,18 @@ form.addEventListener("submit", (e) => {
 	document.dispatchEvent(new Event(RENDER_EVENT));
 });
 
-function addBook(id, judul, penulis, tahun, isCompleted) {
-	const tahunToNum = parseInt(tahun);
+function addBook(id, judul, penulis, tahunStr, isCompleted) {
+	const tahun = parseInt(tahunStr);
 	const newBook = {
 		id,
 		judul,
 		penulis,
-		tahunToNum,
+		tahun,
 		isCompleted,
 	};
 
 	shelf.push(newBook);
+	saveToStorage();
 }
 
 // Book Action
