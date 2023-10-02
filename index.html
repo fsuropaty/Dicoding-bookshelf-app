@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="icon" href="https://fav.farm/📘" />
+		<title>Bookshelf</title>
+	</head>
+	<body>
+		<nav>
+			<hgroup style="margin: 0 auto; text-align: center">
+				<h2 class="contrast">Bookshelf App</h2>
+				<small>A Simple Bookshelf App</small>
+			</hgroup>
+		</nav>
+		<main class="container">
+			<!-- Masukkan Data buku baru -->
+			<article>
+				<h2>Masukkan data buku baru</h2>
+				<footer>
+					<form action="submit" id="form">
+						<fieldset>
+							<label for="inputJudul"
+								>Judul
+								<input
+									type="text"
+									name="judul"
+									id="inputJudul"
+									placeholder="Judul"
+								/>
+							</label>
+							<label for="inputPenulis"
+								>Penulis
+								<input
+									type="text"
+									name="penulis"
+									id="inputPenulis"
+									placeholder="Penulis"
+								/>
+							</label>
+							<label for="inputTahun"
+								>Tahun
+								<input
+									type="number"
+									name="tahun"
+									id="inputTahun"
+									placeholder="Tahun"
+								/>
+							</label>
+							<label for="isCompleted" style="margin-bottom: 1.5rem">
+								<input type="checkbox" name="selesai" id="isCompleted" />
+								Selesai Dibaca
+							</label>
+							<input type="submit" value="Masukkan buku ke dalam rak" />
+						</fieldset>
+					</form>
+				</footer>
+			</article>
+
+			<!-- Cari Buku -->
+			<div>
+				<h2>Cari Buku</h2>
+				<input
+					type="search"
+					id="searchInput"
+					placeholder="Masukkan Judul Buku"
+					name="search"
+				/>
+				<div class="grid">
+					<button id="cariBtn">Cari</button>
+					<button class="secondary" id="resetBtn">Reset</button>
+				</div>
+			</div>
+
+			<!-- Buku yang belum selesai dibaca -->
+			<article>
+				<header>
+					<h2>Rak Buku</h2>
+				</header>
+				<article>
+					<h2>Buku yang belum dibaca</h2>
+					<footer id="incompleteList">
+						<p>Belum ada buku</p>
+					</footer>
+				</article>
+
+				<!-- Buku yang sudah selesai dibaca -->
+				<article>
+					<h2>Buku yang sudah dibaca</h2>
+
+					<footer id="completedList">
+						<p>Belum ada buku</p>
+					</footer>
+				</article>
+			</article>
+		</main>
+
+		<dialog id="prompt">
+			<article>
+				<h3>Apa kamu yakin ingin menghapus buku ini?</h3>
+				<div class="grid">
+					<button class="secondary" id="prompt-yes">Ya</button>
+					<button id="prompt-no">Tidak</button>
+				</div>
+			</article>
+		</dialog>
+	</body>
+
+	<script src="script.js"></script>
+</html>
